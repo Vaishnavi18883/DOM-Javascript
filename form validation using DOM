@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      .form{
+        height: 80vh;
+        width: 50vw;
+        /* border: 2px solid red; */
+        margin-top: 20px;
+        margin-left: 10em;
+        padding: 20px;
+        background-color: rgb(19, 50, 106);
+        color: white;
+      }
+      .error {
+        color: yellow;
+        font-size: 0.9em;
+       }
+      .success {
+         color: lightgreen;
+         font-weight: bold;
+        }
+
+      .submit-btn{
+        background-color: rgb(238, 77, 18);
+        padding: 5px;
+        border: none;
+      }
+      .reset-btn{
+        background-color: rgb(238, 77, 18);
+        padding: 5px;
+        border: none;
+      }
+    </style>
+</head>
+<body>
+    <form class="form">
+      Student Name
+        <input type="text" id="name" placeholder="Enter Your name">
+      <div id="nameError" class="error"></div>  <br>
+      Email ID
+        <input type="email" id="mail" placeholder="Enter Your Email ID">
+      <div id="emailError" class="error"></div> <br>
+      Password 
+        <input type="password" id="password" placeholder="Enter Your password">
+      <div id="passError" class="error"></div> <br>
+      Mobile Number 
+        <input type="number" id="mobile" maxlength="10"placeholder=" mobile number">
+      <div id="mobileError" class="error"></div><br>
+      
+      <button type="submit" class="submit-btn">Submit</button>
+      <button type="reset" class="reset-btn">Reset</button>
+      <div class="output"></div>
+        
+    </form>
+
+
+
+    <script>
+      const form = document.querySelector(".form")
+      const name = document.getElementById("name");
+      const email = document.getElementById("mail");
+      const password = document.getElementById("password");
+      const mobile = document.getElementById("mobile");
+      const output = document.querySelector(".output");
+
+
+      form.addEventListener("submit",function(e){
+        e.preventDefault();
+      
+
+      let isValid= true;
+      clearAllError();
+      output.innerHTML = "";
+      //name validatin
+      if(name.value.trim()===""){
+        showError("nameError","Require*");
+        isValid = false;
+      }
+
+      //mail validation
+      if(!email.value.includes("@")){
+        showError("emailError","invalid email");
+        isValid = false;
+      }
+      if(!/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,}$/
+.test(password.value)) {
+        showError("passError","atleast one should be in upper case lower case & special character ");
+        isValid =false;
+      }
+
+      //mbile validation
+      if ( !/^[6-9]\d{9}$/.test(mobile.value)) {
+        showError("mobileError","invalid mobile number");
+        isValid = false;
+      }
+      if(isValid){
+        output.innerHTML=
+        `<p class="success">Registration Successful</p>`;
+        form.reset();//clear form
+      }
+    });
+    //realtime field clearing
+    name.addEventListener("input",()=> clearError("nameError"));
+    email.addEventListener("input",()=> clearError("emailError"));
+    password.addEventListener("input",()=> clearError("passError"))
+    mobile.addEventListener("input",()=> clearError("mobileError"));
+
+
+
+    function showError(id,message){
+      document.getElementById(id).innerText =message;
+    }
+    function clearError(id){
+      document.getElementById(id).innerText = "";
+    }
+    function clearAllError(){
+      clearError("nameError");
+      clearError("emailError");
+      clearError("passError");
+      clearError("mobileError");
+    }
+  
+      
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>
