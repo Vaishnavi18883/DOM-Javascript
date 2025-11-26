@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button{
+            background-color: grey;
+            color: white;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+   <button onclick="toggle()" >Click Me</button>
+   <h1 id="text">This is my page</h1>
+
+
+   <script>
+    function toggle(){
+     const p= document.getElementById("text");
+     p.style.display=(p.style.display==="none"? "block":"none");
+    }
+   </script>
+</body>
+</html>
