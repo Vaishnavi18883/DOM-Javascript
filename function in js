@@ -5,3 +5,5 @@ const students = [
   { name: "Pooja", marks: 90 },
   { name: "Kiran", marks: 35 }
 ];
+const studentNames = students.map(student => student.name);
+console.log("Student Names:", studentNames);
