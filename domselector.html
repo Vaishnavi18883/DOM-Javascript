@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Dom selector and contents</h1>
+    <ul>
+        <li class="note">Item1</li>
+        <li class="note">Item2</li>
+        <li class="note">Item3</li>
+
+    </ul>
+    <p id="para">
+        This is a <span class="bold">Test</span> Paragraph
+    </p>
+    <button onclick="showContent()">Show content text</button>
+    <button onclick="updatecss()">Update CSS</button>
+    <div id="output" style="margin-top: 30px; background-color: rgb(216, 216, 216); padding: 10px;">
+
+    </div>
+    <script>
+        const getlist = document.getElementsByTagName("li");
+         function showContent(){
+            const para = document.getElementById("para");
+            const output = document.getElementById("output");
+
+            const innerText = para.innerText;
+            const innerHTML = para.innerHTML;
+            const innnerContent = para.innnerContent;
+
+
+            output.innerHTML =
+             `
+             <h2> output :-</h2>
+              <p><b>inner text </b> ${innerText}</p>
+              <p><b>inner HTML </b> ${innerHTML}</p>
+              <p><b>inner Content</b> ${innnerContent}</p>
+             `;
+
+            
+         }
+         function updatecss(){
+            const list = document.querySelectorAll(".note");
+            list.forEach(note=>{
+                note.style.color = "aquamarine";
+                note.style.backgroundColor = "grey";
+            }
+            )
+         }
+    </script>
+</body>
+</html>
