@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2> Counter(Increment/Decrement)</h2>
+    <button onclick="increase()">+</button>
+    <span id="count"></span>
+    <button  onclick="decrease()">-</button>
+    <script>
+        let a = 0;
+        function increase(){
+            a++;
+             document.getElementById("count").innerText = a;
+        }
+        function decrease(){
+            a--;
+            document.getElementById("count").innerText = a;
+        }
+    </script>
+</body>
+</html>
