@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+ <h2>Select language</h2>
+ <label for="programming language"> Select programming language</label>
+ <select name="main" id="main">
+    <option value="javaScript">JavaScript</option>
+    <option value="python">Python</option>
+    <option value="java">Java</option>
+    </select>
+
+    <div id="javaScript" class="subdropdown">
+        <label for="javaScript">JavaScript Framework</label>
+        <select name="" id="javaScript">
+            <option value="react">React</option>
+            <option value="vue">Vue</option>
+            <option value="angular">Angular</option>
+        </select>
+    </div>
+    <div id="python" class="subdropdown">
+        <select name="" id="python">
+            <option value="Django">Django</option>
+            <option value="Flask">Flask</option>
+        </select>
+
+    </div>
+
+    <div id="java" class="subdropdown">
+        <select name="" id="java">
+            <option value="spring">Spring</option>
+            <option value="hibernate">Hibernate</option>
+        </select>
+    </div>
+<script>
+    const mainDropdown = document.getElementById("main");
+    const subDropdown = document.querySelectorAll(".subdropdown");
+    mainDropdown.addEventListener("change",function(){
+        subDropdown .forEach(dropdown => {
+            dropdown.style.display = "none";
+            
+        });
+        const selected = this.value;
+        if(selected){
+    const sub = document.getElementById(selected);
+        if (sub) sub.style.display = "block";
+    }
+    })
+</script>
+    
+ 
+</body>
+</html>
