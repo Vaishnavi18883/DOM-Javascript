@@ -1,0 +1,20 @@
+let student = [
+    {name :'amit',marks:82},
+    {name :'Sara',marks:87},
+    {name :'Jay',marks:45},
+    {name :'Nina',marks:67}
+];
+
+
+const total = student.reduce((accu,ele,index , arr)=>{
+    return accu +ele.marks;    
+
+},0)
+const avg= total/student.length;
+console.log(avg);
+
+let studentArr = student.filter((stud)=>{
+    return stud.marks>70;
+
+})
+console.log(studentArr);
