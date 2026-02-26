@@ -1,0 +1,36 @@
+function add(a,b) {
+console.log("Additin is ",a+b);    
+}
+//add(5,4);
+
+function sub(a,b) {
+    console.log("subtractin is",a-b);
+    
+}
+//sub(6,3);
+function mul(a,b) {
+    console.log("Multiplicatin is ",a*b);
+    
+    
+}
+//mul(5,4);
+function div(a,b) {
+    if (b===0) {
+        console.log("It can not be divide ");    
+    }else{
+        console.log("Divisn is :",a/b);
+        
+    }
+    
+}
+//div(4,0);
+
+add(5,4);
+sub(6,3);
+mul(5,4);
+div(4,2);
+
+
+
+
+
