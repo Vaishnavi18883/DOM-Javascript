@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive Webpage</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f2f2f2;
+      text-align: center;
+      padding-top: 100px;
+    }
+
+    .box {
+      background: white;
+      width: 400px;
+      margin: auto;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    button {
+      padding: 10px 15px;
+      margin: 5px;
+      border: none;
+      background: #333;
+      color: white;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    button:hover {
+      background: #101010;
+    }
+
+    #show {
+      margin-top: 20px;
+      font-size: 18px;
+      font-weight: bold;
+    }
+  </style>
+
+</head>
+
+<body>
+
+<div class="box">
+
+  <h2>JavaScript Quiz</h2>
+
+  <p>Inside which HTML element do we put JavaScript?</p>
+
+  <button id="a">title</button>
+  <button id="b">head</button>
+  <button id="c">body</button>
+  <button id="d">html</button>
+
+  <p id="show">Choose your answer</p>
+
+</div>
+
+<script>
+
+  const a = document.getElementById("a");
+  const b = document.getElementById("b");
+  const c = document.getElementById("c");
+  const d = document.getElementById("d");
+  const show = document.getElementById("show");
+  a.addEventListener("click", function () {
+    show.innerText = "Incorrect Answer";
+    show.style.color = "red";
+  });
+
+  b.addEventListener("click", function () {
+    show.innerText = "Incorrect Answer";
+    show.style.color = "red";
+  });
+
+  d.addEventListener("click", function () {
+    show.innerText = "Incorrect Answer";
+    show.style.color = "red";
+  });
+  c.addEventListener("click", function () {
+    show.innerText = "Correct Answer";
+    show.style.color = "green";
+  });
+
+</script>
+
+</body>
+</html>
